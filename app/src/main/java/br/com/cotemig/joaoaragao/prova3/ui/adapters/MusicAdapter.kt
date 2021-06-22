@@ -1,14 +1,17 @@
 package br.com.cotemig.joaoaragao.prova3.ui.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.cotemig.joaoaragao.prova3.R
 import br.com.cotemig.joaoaragao.prova3.model.Playlist
+import br.com.cotemig.joaoaragao.prova3.ui.activities.PlayerActivity
 import coil.load
 import coil.transform.RoundedCornersTransformation
 
@@ -41,6 +44,14 @@ class MusicAdapter(var context: Context, var list: List<Playlist>) :
             var artist = view.findViewById<TextView>(R.id.artist)
             artist.text = playlist.artist
 
+            var itemMusic = view.findViewById<LinearLayout>(R.id.itemMusic)
+            itemMusic.setOnClickListener {
+                var intent = Intent(context, PlayerActivity::class.java)
+                intent.putExtra("item", playlist)
+                context.startActivity(intent)
+            }
         }
+
+
     }
 }

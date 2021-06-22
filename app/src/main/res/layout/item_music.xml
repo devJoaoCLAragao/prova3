@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:layout_marginRight="11dp"
     android:id="@+id/itemMusic"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:clickable="true">
 
     <ImageView
         android:id="@+id/thumb"
@@ -23,7 +24,7 @@
 
     <TextView
         android:id="@+id/artist"
-        android:layout_width="wrap_content"
+        android:layout_width="136dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         android:fontFamily="@font/montserrat_regular"
